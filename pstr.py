@@ -10,9 +10,10 @@ def split(string: str):
     return [char for char in string]
 
 
-def replace(old: str, new: str):
+def replace(old: str, new: str, visual = False):
     """
-    Takes two arguments; replaces the strings fed
+    Takes three arguments; replaces the strings fed.
+    Argument visual is optional, usage will affect preformance.
 
     :return: New string
     """
@@ -64,6 +65,8 @@ def replace(old: str, new: str):
         else:
             old[index] = new[index]
             index += 1
+            if visual:  # For demonstrating how replace function works
+                print(old)
 
     # Map to string and return
     repStr = ''.join(map(str, old))
